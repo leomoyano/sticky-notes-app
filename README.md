@@ -33,7 +33,7 @@ The app uses a lightweight feature-first structure focused on one `notes` featur
 - `hooks/`: interaction hooks (`useNoteDrag`, `useNoteResize`) and persistence (`useLocalStorageNotes`)
 - `components/`: board, note card, resize handle, create form
 
-## Short Architecture Description (2-3 paragraphs)
+## Architecture Description
 
 This single-page application is organized with a lightweight feature-first structure centered on `features/notes`, which keeps the scope small and easy to reason about during a timeboxed take-home. Domain types and geometry constraints are isolated from UI rendering, so note behavior remains predictable and statically typed. The state layer uses a typed reducer with explicit action unions (`create`, `move`, `resize`, `set-active`, `hydrate`) to make transitions auditable and straightforward to discuss in an interview.
 
