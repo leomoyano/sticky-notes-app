@@ -1,6 +1,6 @@
 # Sticky Notes SPA (React + TypeScript)
 
-Desktop-first sticky notes board built for a frontend take-home challenge.
+Desktop-first sticky notes board built with React and TypeScript.
 
 ## Implemented Features
 
@@ -35,7 +35,7 @@ The app uses a lightweight feature-first structure focused on one `notes` featur
 
 ## Architecture Description
 
-This single-page application is organized with a lightweight feature-first structure centered on `features/notes`, which keeps the scope small and easy to reason about during a timeboxed take-home. Domain types and geometry constraints are isolated from UI rendering, so note behavior remains predictable and statically typed. The state layer uses a typed reducer with explicit action unions (`create`, `move`, `resize`, `set-active`, `hydrate`) to make transitions auditable and straightforward to discuss in an interview.
+This single-page application is organized with a lightweight feature-first structure centered on `features/notes`, which keeps the scope small and easy to reason about. Domain types and geometry constraints are isolated from UI rendering, so note behavior remains predictable and statically typed. The state layer uses a typed reducer with explicit action unions (`create`, `move`, `resize`, `set-active`, `hydrate`) to make transitions auditable and straightforward to maintain.
 
 Drag and resize interactions are implemented with the Pointer Events API and pointer capture, without external drag-and-drop libraries. High-frequency pointer data is handled through refs and animation-frame scheduling to avoid unnecessary rerenders while preserving responsiveness. Usability constraints (minimum note size, board bounds clamping, active note focus, and keyboard-visible focus states) are treated as first-class behavior rather than cosmetic details.
 
@@ -45,7 +45,7 @@ The delivered scope prioritizes the required core features for a 3-4 hour window
 
 1. **Typed reducer for persistent state**
    - predictable state transitions
-   - clear action model for interview explanation
+   - clear and consistent action model
 
 2. **Pointer events + pointer capture**
    - robust drag/resize behavior
